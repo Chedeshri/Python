@@ -1,0 +1,39 @@
+class Car:
+
+    def __init__(self):
+        self.Car_Fare = {'BMW':100 ,'Audi': 200,'FORD': 300}
+
+
+
+    def faredetails(self):
+        print "Cost Per day :"
+        print "-"*10
+        print "BMW : $",self.Car_Fare['BMW']
+        print "Audi : $",self.Car_Fare['Audi']
+        print "Ford : $",self.Car_Fare['FORD']
+
+    def calculatefairs(self,typeofcar,numberofdays):
+        return self.Car_Fare[typeofcar]*numberofdays
+
+
+car = Car()
+while True:
+    print "Enter your choice : "
+    print "-"*10
+    print "1: Display the car availble"
+    print "2: lent a car"
+    print "3: exit"
+    userchoice = (int(input()))
+
+    if userchoice is 1:
+        car.faredetails()
+    elif userchoice is 2:
+        print "Enter the car of your choice"
+        typeofcar = raw_input()
+        print "Enter the number of days you want to borrow"
+        numberofdays = int(input())
+        fare = car.calculatefairs(typeofcar,numberofdays)
+        print "Total fare is : ",fare
+        print "Thank you!"
+    elif userchoice is 3:
+        exit()
