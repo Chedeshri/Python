@@ -1,0 +1,41 @@
+class Library:
+
+    NumberOfBooks = 4
+    list = ["a", "b", "c", "d"]
+
+    def __init__(self):
+        answer = input('Show the list press 1: yes 2: No - ')
+
+        if answer == 1:
+            print 'Total number of books Ibrary :- ', Library.NumberOfBooks
+
+            for i in Library.list:
+              print(i)
+        else:
+            exit()
+
+    def Borrow(self):
+            booknumber = input('Enter the book number to be borrowed')
+            Library.NumberOfBooks = Library.NumberOfBooks-1
+            del Library.list[booknumber]
+            print 'Total number of books in Library :- ', Library.NumberOfBooks
+            print "Updated list of books is"
+            for i in Library.list:
+             print (i)
+
+    def Return(self):
+            returnbook = input("Enter the book to return")
+            Library.NumberOfBooks = Library.NumberOfBooks+1
+            Library.list.append(returnbook)
+            print 'Total number of books in Library :- ', Library.NumberOfBooks
+            print "Updated List is : -"
+            for i in Library.list:
+             print(i)
+
+
+
+display = Library()
+display.Borrow()
+display.Return()
+
+
